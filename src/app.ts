@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 
 import { loadApiEndpoints } from "./controllers/api";
+import { InMemoryBeersRepository } from "./infrastructure/InMemoryBeersRepository";
 
 // Create Express server
 const app = express();
@@ -15,6 +16,8 @@ app.use(
   express.static(path.join(__dirname, "../public"), { maxAge: 31557600000 })
 );
 
-loadApiEndpoints(app);
+const beersRepository = new InMemoryBeersRepository();
+
+loadApiEndpoints(app, beersRepository);
 
 export default app;

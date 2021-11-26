@@ -1,10 +1,11 @@
 import { Application, Request, Response } from "express";
 
-import { InMemoryBeersRepository } from "../infrastructure/InMemoryBeersRepository";
+import { BeersRepository } from "../domain/BeersRepository";
 
-export const loadApiEndpoints = (app: Application): void => {
-  const beersRepository = new InMemoryBeersRepository();
-
+export const loadApiEndpoints = (
+  app: Application,
+  beersRepository: BeersRepository
+): void => {
   app.get("/api/beers", async (req: Request, res: Response) => {
     const foodToPairWith = "chicken";
 
