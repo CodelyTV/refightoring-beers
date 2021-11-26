@@ -1,3 +1,5 @@
-interface BeersRepository {
-  searchByFoodPairing(foodToPairWith: string): Promise<unknown>;
+import { Beer } from "./Beer";
+
+export interface BeersRepository {
+  searchByFoodPairing(foodToPairWith: string): Promise<Beer[]>;
 }

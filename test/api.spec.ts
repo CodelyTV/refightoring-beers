@@ -1,7 +1,7 @@
 import request from "supertest";
 
 import app from "../src/app";
-import json from "./expected.json";
+import json from "./expectedBeers.json";
 
 const uri = "/api/beers";
 
@@ -11,8 +11,11 @@ describe(`GET ${uri}`, () => {
   });
 
   it("should return expected body", () => {
-    return request(app).get(uri).expect(200).then((response) => {
-      expect(response.body).toStrictEqual(json);
-    });
+    return request(app)
+      .get(uri)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).toStrictEqual(json);
+      });
   });
 });

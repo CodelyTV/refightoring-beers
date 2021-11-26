@@ -7,10 +7,9 @@ export const loadApiEndpoints = (app: Application): void => {
 
   app.get("/api/beers", async (req: Request, res: Response) => {
     const foodToPairWith = "chicken";
-    const foundBeers = await beersRepository.searchByFoodPairing(
-      foodToPairWith
-    );
 
-    return res.status(200).send(foundBeers);
+    const beers = await beersRepository.searchByFoodPairing(foodToPairWith);
+
+    return res.status(200).send(beers);
   });
 };
