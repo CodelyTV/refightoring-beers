@@ -1,6 +1,9 @@
-# TypeScript Express API Bootstrap (base / project starter)
+# TypeScript Beers repository
 
-This is a repository intended to serve as a starting point if you want to bootstrap a express API project in TypeScript.
+## Features to implement
+
+- [ ] Implement a `PunkApiBeersRepository` fetching the data from the [PunkApi](https://punkapi.com). It should implement [the `BeersRepository` interface](src/domain/BeersRepository.ts:3) 😊 
+- [ ] Parametrize [the food to pair with](src/controllers/api.ts:10) getting it from the `pair_with` URL query string 🌈
 
 ## Features
 
